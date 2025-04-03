@@ -33,7 +33,7 @@ const Home = () => {
 
     return (
         <div className="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-6 space-y-4">
-            <h2 className="text-2xl font-bold text-center text-gray-800">Ask Google Gemini</h2>
+            <h2 className="text-2xl font-bold text-center text-gray-800">Generate Blog and Image</h2>
 
             {/* Textarea: Auto Expand but No Scroll Down */}
             <textarea
