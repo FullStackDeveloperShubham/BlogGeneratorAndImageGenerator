@@ -51,7 +51,7 @@ app.post("/generate-image", async (req, res) => {
         console.log(" Sending request to Stability AI...");
 
         const response = await axios.post(
-            "https://api.stability.ai/v2beta/stable-image/generate/sd3", // Verify this endpoint
+            "https://api.stability.ai/v2beta/stable-image/generate/sd3", // Verify this endpoint  THIS IS FOR STATBILITY AI
             formData,
             {
                 headers: {
