@@ -14,7 +14,7 @@ const Home = () => {
         setResponse("Generating response...");
         setImageUrl(""); // Clear previous image
         
-        try {
+        try {/*  */
             // Fetch text/blog response
             const textResponse = await axios.post("http://localhost:5000/generate", { input });
             setResponse(textResponse.data.response);

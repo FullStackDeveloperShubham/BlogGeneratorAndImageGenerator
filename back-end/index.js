@@ -12,7 +12,8 @@ app.use(cors());
 app.use(express.json());
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const STABILITY_API_KEY_IMAGE_GENERATION = process.env.STABILITY_API_KEY_IMAGE_GENERATION; // Fix: Define OpenAI API key
+// const STABILITY_API_KEY_IMAGE_GENERATION = process.env.STABILITY_API_KEY_IMAGE_GENERATION; 
+const Hugging_Face_Ai_Image_Generation= process.env.Hugging_Face_Ai_Image_Generation; // Hugging Face API Key for image generation
 
 // 🔹 Text/Blog Generation using Google Gemini
 app.post("/generate", async (req, res) => {
@@ -51,11 +52,11 @@ app.post("/generate-image", async (req, res) => {
         console.log(" Sending request to Stability AI...");
 
         const response = await axios.post(
-            "https://api.stability.ai/v2beta/stable-image/generate/sd3", // Verify this endpoint  THIS IS FOR STATBILITY AI
+            "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2", // Verify this endpoint  THIS IS FOR STATBILITY AI
             formData,
             {
                 headers: {
-                    Authorization: `Bearer ${STABILITY_API_KEY_IMAGE_GENERATION}`,
+                    Authorization: `Bearer ${Hugging_Face_Ai_Image_Generation}`,
                     Accept: "image/*",
                     ...formData.getHeaders(),
                 },
@@ -63,8 +64,7 @@ app.post("/generate-image", async (req, res) => {
             }
         );
 
-        console.log("✅ Stability AI Response Headers:", response.headers);
-
+        console.log("✅ Hugging Face AI Image Generation Response:", response.data);
         // Save the binary image data as a file or convert it to base64
         const imageBase64 = Buffer.from(response.data, "binary").toString("base64");
         res.json({ imageUrl: `data:image/jpeg;base64,${imageBase64}` });
