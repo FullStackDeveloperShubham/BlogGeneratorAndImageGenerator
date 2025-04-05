@@ -16,11 +16,11 @@ const Home = () => {
         
         try {/*  */
             // Fetch text/blog response
-            const textResponse = await axios.post("http://localhost:5000/generate", { input });
+            const textResponse = await axios.post("https://thedigitalshift-assignment.onrender.com/generate", { input });
             setResponse(textResponse.data.response);
 
             // Fetch AI-generated image
-            const imageResponse = await axios.post("http://localhost:5000/generate-image", { prompt: input });
+            const imageResponse = await axios.post("https://thedigitalshift-assignment.onrender.com/generate-image", { prompt: input });
             setImageUrl(imageResponse.data.imageUrl);
             
         } catch (error) {
