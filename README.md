@@ -21,7 +21,7 @@ This project is a **Blog Generation and Image Generator** web application that u
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/blog-image-generator.git
+   git clone https://github.com/FullStackDeveloperShubham/blog-image-generator.git
    cd blog-image-generator
    ```
 
@@ -66,3 +66,6 @@ For any queries, feel free to reach out at [s35919223@gmail.com].
 ## 📂 Links
 - 🔗 GitHub Repository: [GitHub](https://github.com/FullStackDevloperShubham/TheDigitalShift_assignment)
 
+## Instgram
+## 📱 Follow Me
+- [Instagram – @developer_shubham_](https://www.instagram.com/developer_shubham_/)
